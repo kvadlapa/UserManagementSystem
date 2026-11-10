@@ -1,0 +1,7 @@
+bin/
+obj/
+.vs/
+*.user
+.DS_Store
+# local secrets: copy appsettings.example.json to appsettings.json
+UserManagementSystem/appsettings.json

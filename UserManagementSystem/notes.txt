@@ -1,0 +1,79 @@
+Basic Syntax:
+
+using System;  // Same like java import java.util.*;
+
+namespace HelloWorld { //package
+    class Program { //class
+        static void Main(string[] args) {
+            Console.WriteLine("Hello, World!”);//System.out.println(“”);
+        }
+    }
+}
+
+
+
+
+Type Casting:
+Implicit Type Casting: Low sige compatable types to big size(byte to int)
+Explicit: Big to Small(Int -> byte)
+int i=1;
+byte j = i;// Not possible. error thrown
+byte j = (byte) i; //Explicit type conversion/type casting
+
+Non Compatable types:
+String —> int(Not Compatable)
+
+string str = “1”;
+int i = int.parse(str);
+or
+int j = Convert.toInt32(str);
+
+
+
+To Start a new project in VS Code:
+—> cmd+ shift + P and select the right project.
+
+
+UserManagementSystem/
+│
+├── Controllers/
+│   └── UserController.cs
+│
+├── Models/
+│   └── User.cs
+│
+├── Data/
+│   └── AppDbContext.cs
+│
+├── Repositories/
+│   ├── IUserRepository.cs
+│   └── UserRepository.cs
+│
+├── Services/
+│   ├── IUserService.cs
+│   └── UserService.cs
+│
+├── DTOs/
+│   └── UserDto.cs
+│
+├── Middleware/
+│   └── ExceptionHandlingMiddleware.cs
+│
+├── Program.cs
+├── appsettings.json
+└── UserManagementSystem.csproj
+
+
+appsettings.json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=UserDb;User Id=admin;Password=secret;"
+  }
+}
+
+Used in Program.cs:
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+

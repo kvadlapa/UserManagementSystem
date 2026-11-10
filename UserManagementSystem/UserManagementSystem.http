@@ -1,0 +1,9 @@
+@rootURL = http://localhost:5107
+
+GET {{rootURL}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{rootURL}}/api/user/1
+Accept: application/json
